@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./Navbar";
+import Main from "./Main";
 
-function App() {
+export default function App() {
+  const [jokes, setJokes] = React.useState([]);
+  const [isSingleJoke, setIsSingleJoke] = React.useState(true);
+  React.useEffect(() => {
+    fetchRandomJoke();
+  }, []);
+
+  function fetchRandomJoke() {
+    fetch("https://official-joke-api.appspot.com/random_ten")
+      .then((res) => res.json())
+      .then((data) => setJokes(data));
+  }
+
+  function GenerateJoke() {
+    fetchRandomJoke();
+  }
+
+  const elements = jokes.map((joke) => (
+    <Main joke={joke} GenerateJoke={GenerateJoke} />
+  ));
+
+  function isSingleJokeFunction(event) {
+    const { name } = event.target;
+    const contition =
+      (name == "singleJoke" && !isSingleJoke) ||
+      (name == "tenJokes" && isSingleJoke);
+    if (contition) {
+      setIsSingleJoke((prev) => !prev);
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar
+        isSingleJoke={isSingleJoke}
+        isSingleJokeFunction={isSingleJokeFunction}
+      />
+      {isSingleJoke ? elements[0] : elements}
+      {jokes.length > 0 && (
+        <button className="randomButton" onClick={GenerateJoke}>
+          {isSingleJoke ? "Generate a random joke" : "Generate 10 random joke"}
+        </button>
+      )}
+    </>
   );
 }
-
-export default App;
