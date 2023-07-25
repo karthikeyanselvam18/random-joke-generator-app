@@ -12,7 +12,9 @@ export default function Joke(props) {
         {punchline && <p className="title">Punchline:</p>}
         <p className="joke">{punchline}</p>
       </div>
-      <CopyTextButton textToCopy={`Setup: ${setup} Punchline: ${punchline}`} />
+      <CopyTextButton
+        textToCopy={`Setup: ${setup}\n\nPunchline: ${punchline}`}
+      />
     </div>
   );
 }
