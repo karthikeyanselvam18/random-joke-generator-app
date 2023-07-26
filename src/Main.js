@@ -1,5 +1,6 @@
 import React from "react";
 import CopyTextButton from "./CopyTextButton";
+import WhatsAppShareButton from "./WhatsappShareButton";
 
 export default function Joke(props) {
   const { setup, punchline } = props.joke;
@@ -12,9 +13,16 @@ export default function Joke(props) {
         {punchline && <p className="title">Punchline:</p>}
         <p className="joke">{punchline}</p>
       </div>
-      <CopyTextButton
-        textToCopy={`Setup: ${setup}\n\nPunchline: ${punchline}`}
-      />
+      <div className="button-cont">
+        <CopyTextButton
+          textToCopy={`Setup: ${setup}\n\nPunchline: ${punchline}`}
+        />
+        <WhatsAppShareButton
+          textToShare={`whatsapp://send?text=Setup:%20${encodeURIComponent(
+            setup
+          )}%0A%0APunchline:%20${encodeURIComponent(punchline)}`}
+        />
+      </div>
     </div>
   );
 }

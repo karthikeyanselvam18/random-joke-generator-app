@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Main from "./Main";
+import GenerateButton from "./GenerateButton";
 
 export default function App() {
   const [jokes, setJokes] = React.useState([]);
@@ -17,6 +18,7 @@ export default function App() {
 
   function GenerateJoke() {
     fetchRandomJoke();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   const elements = jokes.map((joke) => (
@@ -41,9 +43,10 @@ export default function App() {
       />
       {isSingleJoke ? elements[0] : elements}
       {jokes.length > 0 && (
-        <button className="randomButton" onClick={GenerateJoke}>
-          {isSingleJoke ? "Generate a random joke" : "Generate 10 random joke"}
-        </button>
+        <GenerateButton
+          GenerateJoke={GenerateJoke}
+          isSingleJoke={isSingleJoke}
+        />
       )}
     </>
   );

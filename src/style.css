@@ -45,6 +45,7 @@ body::-webkit-scrollbar {
 .menu > button {
   margin-right: 10px;
   padding: 5px;
+  font-weight: bold;
   border: 1px solid #252525;
   border-radius: 20px;
   padding-inline: 10px;
@@ -88,6 +89,16 @@ body::-webkit-scrollbar {
   border: 2px solid rgb(37, 37, 37);
   transition: 0.15s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .logo-button:hover {
@@ -96,8 +107,13 @@ body::-webkit-scrollbar {
 
 .copyLogo {
   padding: 3px;
-  width: 35px;
+  width: 30px;
   transition: 0.15s;
+}
+
+.whatsappLogo {
+  width: 30px;
+  padding: 1px;
 }
 
 .logo-button:active .copyLogo,
