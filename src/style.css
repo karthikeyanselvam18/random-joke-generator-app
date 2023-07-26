@@ -94,14 +94,8 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 
-.button-cont {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.logo-button:hover {
+.logo-button:hover,
+.shareLogo:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -111,13 +105,20 @@ body::-webkit-scrollbar {
   transition: 0.15s;
 }
 
-.whatsappLogo {
-  width: 30px;
-  padding: 1px;
+.share-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.shareLogo {
+  width: 45px;
+  transition: 0.15s;
+  border-radius: 50%;
 }
 
 .logo-button:active .copyLogo,
-.randomButton:active {
+.randomButton:active,
+.shareLogo:active {
   transform: scale(0.9);
 }
 

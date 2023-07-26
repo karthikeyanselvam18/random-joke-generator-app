@@ -1,9 +1,13 @@
 import React from "react";
 import CopyTextButton from "./CopyTextButton";
-import WhatsAppShareButton from "./WhatsappShareButton";
+import ShareButtons from "./ShareButtons";
 
 export default function Joke(props) {
   const { setup, punchline } = props.joke;
+
+  const contentUrl =
+    "For more random joke : https://karthikeyanselvam18.github.io/random-joke-generator-app/";
+  const jokeContent = `Setup: ${setup}\n\nPunchline: ${punchline}\n\n`;
 
   return (
     <div className="main">
@@ -13,16 +17,7 @@ export default function Joke(props) {
         {punchline && <p className="title">Punchline:</p>}
         <p className="joke">{punchline}</p>
       </div>
-      <div className="button-cont">
-        <CopyTextButton
-          textToCopy={`Setup: ${setup}\n\nPunchline: ${punchline}`}
-        />
-        <WhatsAppShareButton
-          textToShare={`whatsapp://send?text=Setup:%20${encodeURIComponent(
-            setup
-          )}%0A%0APunchline:%20${encodeURIComponent(punchline)}`}
-        />
-      </div>
+      <ShareButtons url={contentUrl} jokeContent={jokeContent} />
     </div>
   );
 }
