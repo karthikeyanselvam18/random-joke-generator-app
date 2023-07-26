@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/random-joke-generator-app/static/css/main.14dad5a4.css",
-    "main.js": "/random-joke-generator-app/static/js/main.67d62b14.js",
+    "main.css": "/random-joke-generator-app/static/css/main.805722e8.css",
+    "main.js": "/random-joke-generator-app/static/js/main.284a7e0f.js",
     "static/media/laugh.png": "/random-joke-generator-app/static/media/laugh.e89f29f54e30cf5c3a35.png",
-    "static/media/whatsapp.png": "/random-joke-generator-app/static/media/whatsapp.b1b801cf0375045d4f69.png",
+    "static/media/whatsapp.png": "/random-joke-generator-app/static/media/whatsapp.17b8f864dc8ca4b4489d.png",
+    "static/media/twitter.png": "/random-joke-generator-app/static/media/twitter.a0edd153afbcdb7ffc3b.png",
+    "static/media/facebook.png": "/random-joke-generator-app/static/media/facebook.9a6e212e214e7aef33e5.png",
     "index.html": "/random-joke-generator-app/index.html",
-    "main.14dad5a4.css.map": "/random-joke-generator-app/static/css/main.14dad5a4.css.map",
-    "main.67d62b14.js.map": "/random-joke-generator-app/static/js/main.67d62b14.js.map"
+    "main.805722e8.css.map": "/random-joke-generator-app/static/css/main.805722e8.css.map",
+    "main.284a7e0f.js.map": "/random-joke-generator-app/static/js/main.284a7e0f.js.map"
   },
   "entrypoints": [
-    "static/css/main.14dad5a4.css",
-    "static/js/main.67d62b14.js"
+    "static/css/main.805722e8.css",
+    "static/js/main.284a7e0f.js"
   ]
 }
