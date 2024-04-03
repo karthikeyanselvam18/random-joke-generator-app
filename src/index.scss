@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$primary-background-light: #dee2e6;
+$joke-background-light: darken($primary-background-light, 25);
+$text-color-light: #232629;
+$header-text-light: #dee2e6;
+$header-background-light: darken($primary-background-light, 75);
+
+$primary-background-dark: #1b1d1f;
+$joke-background-dark: lighten($primary-background-dark, 5);
+$text-color-dark: #dee2e6;
+$header-text-dark: #dee2e6;
+$header-background-dark: lighten($primary-background-dark, 20);
+
+.light {
+  background-color: $primary-background-light;
+
+  header {
+    background-color: $header-background-light;
+    color: $header-text-light;
+    button {
+      color: $header-text-light;
+    }
+  }
+
+  .joke-component {
+    background-color: $joke-background-light;
+    color: $text-color-light;
+    a {
+      color: $text-color-light;
+    }
+  }
+}
+
+.dark {
+  background-color: $primary-background-dark;
+  header {
+    background-color: $header-background-dark;
+    color: $header-text-dark;
+    button {
+      color: $header-text-dark;
+    }
+  }
+
+  .joke-component {
+    background-color: $joke-background-dark;
+    color: $text-color-dark;
+    a {
+      color: $text-color-dark;
+    }
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @media (max-width: 600px) {
+      .title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  button {
+    height: 35px;
+    width: 35px;
+    display: grid;
+    place-items: center;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+  }
+}
+
+.jokes-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  .joke-component {
+    display: grid;
+    grid-template-columns: minmax(100px, 500px);
+    gap: 10px;
+    padding: 15px;
+    border-radius: 0.2rem;
+    .setup-container,
+    .punchline-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      span {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      .setup,
+      .punchline {
+        padding-left: 10px;
+        font-size: 1.4rem;
+        font-weight: normal;
+      }
+    }
+    .share-buttons {
+      justify-self: end;
+      display: flex;
+      gap: 15px;
+      a {
+        font-size: 2rem;
+      }
+    }
+  }
+}
